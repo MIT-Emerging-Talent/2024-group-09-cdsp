@@ -43,16 +43,17 @@ how often will we get in touch on each channel, and what we will discuss there:
 
 ### Availability for calling/messaging
 
-| Day    | Monday  | Tuesday | Wednesday | Thursday | Friday  | Saturday | Sunday  |
-| ------ | :-----: | :-----: | :-------: | :------: | :-----: | :------: | :-----: |
-| _name_ | 13 - 20 | 13 - 20 |  13 - 20  | 13 - 20  | 13 - 20 | 13 - 20  | 13 - 20 |
+| Day         | Monday  | Tuesday | Wednesday | Thursday | Friday  | Saturday | Sunday  |
+| ----------- | :-----: | :-----: | :-------: | :------: | :-----: | :------: | :-----: |
+| _Aleksandr_ | 10 - 20 | 13 - 17 |     -     | 13 - 17  | 13 - 17 | 10 - 20  | 10 - 20 |
+| _name_      | 13 - 20 | 13 - 20 |  13 - 20  | 13 - 20  | 13 - 20 | 13 - 20  | 13 - 20 |
 
 Anastasiia: flexible, we can communicate via git and if sb have any questions/disputes, then get together
 
 ### How many hours everyone has per day:
 
 - Anastasiia: _5h_;
-- name: _6h_;
+- Aleksandr: _3h_;
 - name: _5h_;
 - name: _4h_;
 - name: _3h_;

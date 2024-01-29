@@ -23,6 +23,8 @@ Some boundaries around our project.
 
 Anastasiia: my anxious mind
 
+Aleksandr: Amount of time available to work on the project due busy schedule, I am slow to learn new material due to the language barrier.
+
 ## Internal: Voluntary
 
 <!--
