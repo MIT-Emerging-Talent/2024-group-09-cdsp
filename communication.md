@@ -46,6 +46,7 @@ how often will we get in touch on each channel, and what we will discuss there:
 | Day         | Monday  | Tuesday | Wednesday | Thursday | Friday  | Saturday | Sunday  |
 | ----------- | :-----: | :-----: | :-------: | :------: | :-----: | :------: | :-----: |
 | _Aleksandr_ | 10 - 20 | 13 - 17 |     -     | 13 - 17  | 13 - 17 | 10 - 20  | 10 - 20 |
+|  _Hailu_    | 13 - 20 | 13 - 20 |  13 - 20  | 13 - 20  | 13 - 20 | 13 - 20  | 13 - 20 |
 | _name_      | 13 - 20 | 13 - 20 |  13 - 20  | 13 - 20  | 13 - 20 | 13 - 20  | 13 - 20 |
 
 Anastasiia: flexible, we can communicate via git and if sb have any questions/disputes, then get together
@@ -54,7 +55,7 @@ Anastasiia: flexible, we can communicate via git and if sb have any questions/di
 
 - Anastasiia: _5h_;
 - Aleksandr: _3h_;
-- name: _5h_;
+- Hailu:   _5h_;
 - name: _4h_;
 - name: _3h_;
 
