@@ -11,9 +11,7 @@
 
 ## Group Rules
 
-<!-- any general rules you'd like to set for your group? -->
-
----
+1. Devote at least 8 hours per week to the project.
 
 ## Communication Schedule
 
