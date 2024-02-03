@@ -8,6 +8,17 @@
 -->
 
 # Communication
+Consistently update GitHub and deliver high-quality work, while prioritizing transparent communication, active listening, learning, empathy, and ethical conduct within the team. Emphasize the importance of rebuilding trust through actions after failure and value all feedback for effective communication using Slack, Zoom, and Google Docs.
+
+
+### Team Values:
+- `Excellence`
+- `Punctuality`
+- `Support`
+- `Respect`
+- `Learning`
+- `Communication`
+- `Honesty`
 
 ## Group Rules
 
@@ -20,6 +31,7 @@
 7. If you fail, then count up to 3 and go rebuild trust through actions.
 8. Each feedback is valuable, even if negative, and emphasizes the importance of keeping communication straightforward, playing the long game.
 9. For communication we use Slack, Zoom, Google Docs.
+10. Devote at least 8 hours per week to the project.
 
 ## Communication Schedule
 
@@ -46,7 +58,7 @@ how often will we get in touch on each channel, and what we will discuss there:
 | Day         | Monday  | Tuesday | Wednesday | Thursday | Friday  | Saturday | Sunday  |
 | ----------- | :-----: | :-----: | :-------: | :------: | :-----: | :------: | :-----: |
 | _Aleksandr_ | 10 - 20 | 13 - 17 |     -     | 13 - 17  | 13 - 17 | 10 - 20  | 10 - 20 |
-| _name_      | 13 - 20 | 13 - 20 |  13 - 20  | 13 - 20  | 13 - 20 | 13 - 20  | 13 - 20 |
+| _Anastasiia_| 13 - 20 | 13 - 20 |  13 - 20  | 13 - 20  | 13 - 20 | 13 - 20  | 13 - 20 |
 
 Anastasiia: flexible, we can communicate via git and if sb have any questions/disputes, then get together
 
