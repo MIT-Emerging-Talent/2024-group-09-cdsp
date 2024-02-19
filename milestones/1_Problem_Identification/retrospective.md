@@ -1,6 +1,10 @@
-<!-- this template is for inspiration, feel free to change it however you like! -->
+<!--
+    you should create a new retrospective document after each milestone
+    this template is for inspiration, feel free to change it however you like!
+-->
 
 # Retrospective
+
 
 ## Stop Doing
 
