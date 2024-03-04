@@ -7,10 +7,8 @@
 In general, the child mortality rate is a significant marker indicating the socioeconomic and health conditions of a country. Moving towards prosperity necessitates forecasting and predictive analysis. "Modeling Tomorrow" conducts an extensive evaluation by utilizing advanced statistical methods and machine learning algorithms to predict future trends in child mortality rates of the world by examining historical data. Our aim in reviewing this prediction study is to gain to understand and predict future trends in child mortality.
 
 ## Problem statement
-<!-- your comment -->
-Please follow the link to read full [problem statement]().
+<!-- your comment Please follow the link to read full [problem statement](). -->
 Despite significant progress in reducing child mortality rates globally, challenges persist. Accurate prediction and understanding of the factors influencing child mortality are crucial for policymakers and public health practitioners. This project seeks to address these challenges by applying predictive modeling to historical child mortality data of the world.
-
 
 ## Research questions
 <!-- your comment -->
@@ -31,6 +29,7 @@ Despite significant progress in reducing child mortality rates globally, challen
 
 ### Source Data 
 <!-- your comment -->
+The DHS program's Demographic and Health Survey is our main source of data for this research. Data on child mortality rates for various nations, regions, and periods can be found in this dataset. The variables could be things like maternal education, healthcare facilities, socioeconomic level, and other pertinent indicators. 
 
 
 ## Methodology
