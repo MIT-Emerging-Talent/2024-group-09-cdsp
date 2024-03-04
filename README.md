@@ -4,14 +4,12 @@
 
 ## Overview
 <!-- your comment -->
-In general, the child mortality rate is a significant marker indicating the socioeconomic and health conditions of a country. Moving towards prosperity necessitates forecasting and predictive analysis. "Modeling Tomorrow" conducts an extensive evaluation by utilizing advanced statistical methods and machine learning algorithms to predict future trends in child mortality rates by examining historical data. Our aim in reviewing this prediction study is to gain invaluable information about potential risk factors and identify specific regions for targeted intervention, enabling informed decision-making for upcoming generations' welfare purposes. The ultimate objective of our efforts lies within understanding current patterns intending to construct more durable resistance against crucial issues related to children's well-being globally.
-
+In general, the child mortality rate is a significant marker indicating the socioeconomic and health conditions of a country. Moving towards prosperity necessitates forecasting and predictive analysis. "Modeling Tomorrow" conducts an extensive evaluation by utilizing advanced statistical methods and machine learning algorithms to predict future trends in child mortality rates of the world by examining historical data. Our aim in reviewing this prediction study is to gain to understand and predict future trends in child mortality.
 
 ## Problem statement
 <!-- your comment -->
 Please follow the link to read full [problem statement]().
-Even though healthcare has made great strides, child mortality is still an international issue caused by differences in access to care, socio-economic status, and varying healthcare structures. To combat this problem effectively requires precise predictive models that analyze past data, identify influential factors and predict future patterns of child mortality rates. This initiative seeks to create a reliable system for predicting trends through machine learning algorithms which can expose the intricate dynamics behind children's deaths accurately. By doing so we aim at developing targeted interventions thereby enhancing informed policy making and ultimately steering down global infant death statistics considerably as well contribute significantly towards achieving our goals globally concerning saving more young lives from unnecessary childhood morbidity or/and depletion thereof altogether due to preventable causes which rob them of their rightful place in society both now but also into-extended futures not just locally but indeed internationally too!
-
+Despite significant progress in reducing child mortality rates globally, challenges persist. Accurate prediction and understanding of the factors influencing child mortality are crucial for policymakers and public health practitioners. This project seeks to address these challenges by applying predictive modeling to historical child mortality data of the world.
 
 
 ## Research questions
@@ -37,24 +35,45 @@ Even though healthcare has made great strides, child mortality is still an inter
 
 ## Methodology
 <!-- your comment -->
-Modeling Tomorrow: Forecasting Child Mortality Trends through Predictive Analysis and Deployment outlines a methodical system for assessing the effectiveness of three different models - Linear Regression, Random Forest, and Decision Tree- in anticipating child mortality trends. First and foremost is an extensive data collection process that gathers pertinent datasets with regards to child mortality statistics, socio-economic indicators, as well as healthcare infrastructure information. Then there are consistent preliminary steps taken involving handling missing data values while cleaning up categorical variables alongside encoding them effectively. Consequently comes the exploratory analysis stage when key observations into variable distributions are made identifying any weak or strong associations among it all prior towards pinpointing potential outliers present within said collected information sets themselves."
+The project employs a machine learning approach, specifically linear regression, to model the relationship between various features and child mortality rates. The methodology involves data preprocessing, model training, and evaluation.
+1.	Data Extraction and cleaning:
 
-After this point, attention shifts to feature engineering and selection. This involves conducting exploratory analyses aimed at identifying predictors crucial for gauging child mortality as well as potential new features that can be created in the process. Subsequently, splitting of the dataset into training and validation subsets is done with ease model building leveraging on these sub-samples adequately facilitated. Linear Regression, Decision Tree, and Random Forest models are then developed using data from a said subset - specifically derived via training set division procedures;if successful or otherwise rigorously evaluated by checking them against metrics such Mean Squared Error (MSE)and R-squared before being experimented under same conditions just like other models within our workflow which presents insights needed along iterative lines where possible faults would be corrected prior towards achieving optimal performance while maintaining accuracy tangible across all levels without risking over-fitment issues arising due insufficient calibration between test/training sets through careful inspection after modifications made according what specific problem requires efficiently. 
+•	The initial step involved extracting relevant data from the original dataset. This extraction was performed manually to curate a subset of data that aligns with the project's objectives.
 
-The approach involves conducting a comprehensive evaluation of the precision and general efficiency exhibited by three models. This culminates in determining which model performs best, followed by its implementation using Flask; this is a web framework built with Python that allows for creating an API endpoint able to receive input data (predictors) and offer predictions concerning child mortality. Additionally, it's possible to have an interface designed utilizing HTML/CSS as well - thereby providing users with intuitive functionality when interacting with the deployed model or entering relevant information.
+2.	Handling Data Consistency:
 
-Next, the Flask application and child mortality prediction model are deployed followed by rigorous testing using sample inputs to guarantee precise predictions. Afterward, comprehensive documentation comprising data sources, preprocessing steps, model specifications as well as deployment particulars is created. The instructions for users on efficiently engaging with the deployed model are unambiguous.
+•	Emphasis was placed on ensuring data consistency. This included checking for any discrepancies or anomalies within the dataset. Any inconsistencies were addressed to maintain the integrity of the data.
 
-In conclusion, the methodology proposes elective procedures for consistently overseeing and enhancing the implemented model. Techniques for continual assessment of performance are put into effect, while intermittent revisions to the model are examined in light of new data or emerging tendencies to ensure its continued relevance and precision.
+3.	Categorical Variable Transformation:
+
+  •	For categorical variables,a transformation process was implemented to convert them into a suitable format for machine learning models. This step is crucial as many machine learning algorithms require numerical input. Techniques such as one-hot encoding or label encoding were applied to represent categorical variables in a format that models could interpret effectively.
+
+4.	Model Training:
+   - Train three machine learning models: Linear Regression, Random Forest, and Decision Tree.
+   - Use historical data to teach each model the relationship between features and child mortality rates.
+5.   Model Evaluation:
+   - Evaluate each model's performance using statistical metrics such as Mean Squared Error (MSE) and R-squared.
+   - Compare the models' predictive accuracy and their ability to capture underlying patterns in the data.
+6. Model Selection:
+   - Select the model with the best performance based on evaluation metrics.
+   - Linear Regression, Random Forest, and Decision Tree models will be compared to determine the most effective for predicting child mortality rates.
+
+   Note: After careful evaluation, the Linear Regression model demonstrated superior performance in predicting child mortality rates compared to Random Forest and Decision Tree models. This decision is based on comprehensive analysis using metrics like MSE and R-squared.
+7. Interactive Interface:
+   - Develop an interactive user interface using Streamlit to allow users to input specific years and receive predictions based on the chosen machine learning model.
+8.  Results Presentation:
+   - Present the results of the selected machine learning model's predictions.
+   - Visualize the model's accuracy and provide insights into the factors influencing child mortality rates.
+
   
 
 ## Data Analysis
 <!-- your comment -->
-
+The analysis involves exploring historical child mortality datasets, identifying trends, and understanding correlations with relevant features. Descriptive statistics and visualizations will be used to provide insights into the dataset.
 
 ### Tools
 <!-- your comment -->
-
+The project utilizes Python programming language and relevant libraries such as pandas, numpy, scikit-learn for data analysis, and machine learning. Streamlit is used for building the user interface for easy interaction.
 ### Data cleaning
 <!-- your comment -->
 
@@ -63,7 +82,35 @@ In conclusion, the methodology proposes elective procedures for consistently ove
 
 
 ### Non Technical Explanation
+<!---your comment--->
+In simpler terms, this project aims to understand and predict child mortality rates globally. We use historical data and machine learning techniques to identify patterns and relationships between various factors and child mortality. The results will help policymakers make informed decisions to improve child health.
 ### Techniacal Explanation
+
+The technical approach involves preprocessing datasets, training a linear regression model to understand the correlation between features and child mortality rates. The model is evaluated using statistical metrics, and the predictive capabilities are assessed. The project utilizes Python, machine learning libraries, and Streamlit for creating an interactive user interface.
+
+### Communication Summary
+Key Insights:
+
+African Countries and High Mortality Rates:
+
+ The analysis revealed that a significant number of African countries consistently exhibit some of the highest child mortality rates globally. Despite noticeable reductions in child mortality over the past years, these African nations continue to face challenges in achieving substantial improvements. 
+
+Persistent Challenges in Sub-Saharan Africa: 
+
+Sub-Saharan African countries, in particular, have been disproportionately affected. Factors such as prolonged periods of war, political instability, and insufficient governmental commitment to healthcare infrastructure have contributed to the ongoing struggle to address child mortality effectively.
+
+Machine Learning Model Selection: 
+
+The project employed various machine learning models, including Linear Regression, Random Forest, and Decision Tree. After comprehensive evaluation using statistical metrics, the Linear Regression model emerged as the most effective in predicting child mortality rates.
+Recommendations:
+Targeted Interventions for African Nations: Given the persistent challenges in African countries, there is a crucial need for targeted interventions. These may include increased investments in healthcare infrastructure, addressing political instability, and fostering international collaborations to support healthcare initiatives.
+Continued Monitoring and Evaluation: 
+
+Continuous monitoring and evaluation of child mortality rates are essential to track the impact of interventions. This will help adapt strategies based on evolving circumstances and ensure sustained progress.
+
+Conclusion:
+
+In conclusion, the Modeling Tomorrow project provides valuable insights into the dynamics of child mortality rates globally. While progress has been made and sure will be made too, addressing the unique challenges faced by African nations, especially in Sub-Saharan Africa, remains paramount. The use of machine learning models enhances our predictive capabilities, offering a valuable tool for policymakers and healthcare professionals to make informed decisions.
 
 
 ## Contributors 
