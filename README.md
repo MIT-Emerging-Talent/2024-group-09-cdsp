@@ -114,11 +114,6 @@ The analysis involves exploring historical child mortality datasets, identifying
 
 The project utilizes Python programming language and relevant libraries such as pandas, numpy, scikit-learn for data analysis, and machine learning. Streamlit is used for building the user interface for easy interaction.
 
-###  Data cleaning
-
-<!-- your comment -->
-
-  
 
 ##  Results and evaluation
 
