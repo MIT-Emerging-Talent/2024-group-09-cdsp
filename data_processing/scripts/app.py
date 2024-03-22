@@ -1,63 +1,148 @@
-import streamlit as st
 import pandas as pd
-import numpy as np
+from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error, r2_score
+import streamlit as st
 
+# Load data and train model for world child mortality rate
+def load_data_and_train_model(file_path):
+    df = pd.read_csv(file_path)
+
+    # Select features (X) and target variable (y)
+    X = df[['Year']]  
+    y = df['Median']  
+
+    # Split the data into training and testing sets
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+    # Model: Linear Regression
+    lr_model = LinearRegression()
+    lr_model.fit(X_train, y_train)
+
+    # Evaluate the model
+    mse = mean_squared_error(y_test, lr_model.predict(X_test))
+    r2 = r2_score(y_test, lr_model.predict(X_test))
+
+    return df, lr_model, mse, r2
+
+# Function to make predictions
+def make_predictions(model, years):
+    return model.predict([[year] for year in years])
+
+# Load data and train model for world child mortality rate
+file_path_world = 'world-medium.csv'
+df_world, lr_model_world, mse_world, r2_world = load_data_and_train_model(file_path_world)
+
+# Read the data from the CSV file for countries
+file_path_country = 'country-medium.csv'
+df_country = pd.read_csv(file_path_country, encoding='latin1')
+
+# Read the data from the CSV file for regions
+file_path_region = 'Regionss-medium.csv'
+df_region = pd.read_csv(file_path_region, encoding='latin1')
+
+# Read the data from the CSV file for sustainable development goals
+file_path_sdg = 'SDG-medium.csv'
+df_sdg = pd.read_csv(file_path_sdg)
+
+# Streamlit app
 def main():
-    st.title("Modeling Tomorrow: Predictive Analysis and Forecasting of Child Mortality ")
-    st.markdown(
-        """
-        <style>
-            @keyframes fadeInOut {
-                0% {
-                    background-color: black;
-                }
-                50% {
-                    background-color: #00000080; /* Slightly transparent black */
-                }
-                100% {
-                    background-color: black;
-                }
-            }
+    st.title("Child Mortality Prediction")  
+    html_temp = """
+    <div >
+       
+    </div>
+    """
+    st.markdown(html_temp, unsafe_allow_html=True) 
 
-            div.fade-background {
-                animation: fadeInOut 5s infinite;
-            }
-        </style>
+    st.sidebar.title("Select Data Presentation Option")
+    data_options = ['World Child Mortality Rate', 'By Country', 'By Region', 'By Sustainable Development Goal']
+    selected_data_option = st.sidebar.radio("", data_options)
 
-        <div class="fade-background" style="padding: 10px; border-radius: 10px">
-            <h2 style="color: white; text-align: center;">Modeling Tomorrow predictor </h2>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+    if selected_data_option == 'World Child Mortality Rate':
+        # World Child Mortality Rate option
+        st.subheader("World Child Mortality Rate")
+        st.write(f'Mean Squared Error: {mse_world}')
+        st.write(f'R-squared: {r2_world}')
 
-    prediction_option = st.selectbox('Choose Prediction Option', ['World Child Mortality', 'By Country', 'By Region', 'SDG for Region'])
+        # User input for year
+        selected_year = st.text_input("Enter Year (e.g., 2023.5):")
 
-    if prediction_option == 'World Child Mortality':
-        years = st.text_input("Years", "Type Here")
-        output = ""
-
-        if st.button("Predict"):
-            data = pd.read_csv("world.csv") 
-            x = np.array(data['Year']).reshape(-1, 1)
-            y = np.array(data['Lower']).reshape(-1, 1)
-
-            # Linear Regression
-            model = LinearRegression()
-            model.fit(x, y)
-
-            # Prediction
+        if st.button("Predict child mortality"):
             try:
-                year_to_predict = float(years)  # Convert the input to float
+                selected_year = float(selected_year)  # Convert to float
+                # Check if the year has a fractional part
+                if selected_year == int(selected_year):
+                    st.error("Please enter a fractional year (e.g., 2023.5). Whole numbers are not allowed.")
+                elif selected_year < 1985.5 or selected_year > 2041.5:
+                    st.error("Year is out of range. Please select a year between 1985.5 and 2041.5.")
+                else:
+                    # Predict mortality rate for the specified year
+                    mortality_prediction = make_predictions(lr_model_world, [selected_year])[0]
+                    st.write(f"Predicted Mortality Rate for the world in {selected_year}: {mortality_prediction}")
             except ValueError:
-                st.warning("Please enter a valid integer for 'Years'.")
-                return
+                st.warning("Please enter a valid year.")
+    elif selected_data_option == 'By Country':
+        # User input for country and year
+        selected_country = st.selectbox("Select Country", df_country['Country.Name'].unique())
+        selected_year_country = st.text_input("Enter Year (e.g., 2023.5):")
 
-            prediction = model.predict(np.array([[year_to_predict]]))
-            output = f'The Mortality Rate for the world{year_to_predict} will be: {prediction[0]}'
-            st.success(output)
+        if st.button("Predict child mortality"):
+            try:
+                selected_year_country = float(selected_year_country)
+                if selected_year_country < 2021.5 or selected_year_country > 2041.5:
+                    st.error("Year is out of range. Please select a year between 2021.5 and 2041.5.")
+                else:
+                    # Get the predicted mortality rate for the selected country and year
+                    base_year = 2021.5
+                    country_data = df_country[df_country['Country.Name'] == selected_country]
+                    mortality_prediction_base = country_data[str(base_year)].values[0]
+                    decay_factor = 0.95 ** (selected_year_country - base_year)
+                    mortality_prediction_country = mortality_prediction_base * decay_factor
+                    st.write(f"Predicted Mortality Rate for {selected_country} in {selected_year_country}: {mortality_prediction_country}")
+            except ValueError:
+                st.warning("Please enter a valid year.")
 
-    
-if __name__ == '__main__':
+    elif selected_data_option == 'By Region':
+        # User input for region and year
+        selected_region = st.selectbox("Select Region", df_region['Region.Name'].unique())
+        selected_year_region = st.text_input("Enter Year (e.g., 2023.5):")
+
+        if st.button("Predict child mortality"):
+            try:
+                selected_year_region = float(selected_year_region)
+                if selected_year_region < 2021.5 or selected_year_region > 2041.5:
+                    st.error("Year is out of range. Please select a year between 2021.5 and 2041.5.")
+                else:
+                    # Get the predicted mortality rate for the selected region and year
+                    base_year = 2021.5
+                    region_data = df_region[df_region['Region.Name'] == selected_region]
+                    mortality_prediction_base = region_data[str(base_year)].values[0]
+                    decay_factor = 0.95 ** (selected_year_region - base_year)
+                    mortality_prediction_region = mortality_prediction_base * decay_factor
+                    st.write(f"Predicted Mortality Rate for {selected_region} in {selected_year_region}: {mortality_prediction_region}")
+            except ValueError:
+                st.warning("Please enter a valid year.")
+
+    elif selected_data_option == 'By Sustainable Development Goal':
+        # User input for region and year
+        selected_region = st.selectbox("Select Region", df_sdg['Region.Name'].unique())
+        selected_year_region = st.text_input("Enter Year (e.g., 2023.5):")
+
+        if st.button("Predict child mortality"):
+            try:
+                selected_year_region = float(selected_year_region)
+                if selected_year_region < 2021.5 or selected_year_region > 2041.5:
+                    st.error("Year is out of range. Please select a year between 2021.5 and 2041.5.")
+                else:
+                    base_year = 2021.5
+                    region_data = df_sdg[df_sdg['Region.Name'] == selected_region]  
+                    mortality_prediction_base = region_data[str(base_year)].values[0]
+                    decay_factor = 0.95 ** (selected_year_region - base_year)
+                    mortality_prediction_region = mortality_prediction_base * decay_factor
+                    st.write(f"Predicted Mortality Rate for {selected_region} in {selected_year_region}: {mortality_prediction_region}")
+            except ValueError:
+                st.warning("Please enter a valid year.")
+
+if __name__ == "__main__":
     main()
