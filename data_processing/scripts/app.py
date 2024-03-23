@@ -30,19 +30,19 @@ def make_predictions(model, years):
     return model.predict([[year] for year in years])
 
 # Load data and train model for world child mortality rate
-file_path_world = 'C:/Users/Administrator/OneDrive/Desktop/2024-group-09-cdsp/data_processing/final_data/world-medium.csv'
+file_path_world = 'https://raw.githubusercontent.com/MIT-Emerging-Talent/2024-group-09-cdsp/main/data_processing/final_data/world-medium.csv'
 df_world, lr_model_world, mse_world, r2_world = load_data_and_train_model(file_path_world)
 
 # Read the data from the CSV file for countries
-file_path_country = 'C:/Users/Administrator/OneDrive/Desktop/2024-group-09-cdsp/data_processing/final_data/country-medium.csv'
+file_path_country = 'https://raw.githubusercontent.com/MIT-Emerging-Talent/2024-group-09-cdsp/main/data_processing/final_data/country-medium.csv'
 df_country = pd.read_csv(file_path_country, encoding='latin1')
 
 # Read the data from the CSV file for regions
-file_path_region = 'C:/Users/Administrator/OneDrive/Desktop/2024-group-09-cdsp/data_processing/final_data/Regionss-medium.csv'
+file_path_region = file_path_region = 'https://raw.githubusercontent.com/MIT-Emerging-Talent/2024-group-09-cdsp/main/data_processing/final_data/Regionss-medium.csv'
 df_region = pd.read_csv(file_path_region, encoding='latin1')
 
 # Read the data from the CSV file for sustainable development goals
-file_path_sdg = 'C:/Users/Administrator/OneDrive/Desktop/2024-group-09-cdsp/data_processing/final_data/SDG-medium.csv'
+file_path_sdg = 'https://raw.githubusercontent.com/MIT-Emerging-Talent/2024-group-09-cdsp/main/data_processing/final_data/SDG-medium.csv'
 df_sdg = pd.read_csv(file_path_sdg)
 
 # Streamlit app
@@ -145,4 +145,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
