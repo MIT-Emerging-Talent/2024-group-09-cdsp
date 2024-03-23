@@ -30,19 +30,19 @@ def make_predictions(model, years):
     return model.predict([[year] for year in years])
 
 # Load data and train model for world child mortality rate
-file_path_world = 'world-medium.csv'
+file_path_world = 'C:/Users/Administrator/OneDrive/Desktop/2024-group-09-cdsp/data_processing/final_data/world-medium.csv'
 df_world, lr_model_world, mse_world, r2_world = load_data_and_train_model(file_path_world)
 
 # Read the data from the CSV file for countries
-file_path_country = 'country-medium.csv'
+file_path_country = 'C:/Users/Administrator/OneDrive/Desktop/2024-group-09-cdsp/data_processing/final_data/country-medium.csv'
 df_country = pd.read_csv(file_path_country, encoding='latin1')
 
 # Read the data from the CSV file for regions
-file_path_region = 'Regionss-medium.csv'
+file_path_region = 'C:/Users/Administrator/OneDrive/Desktop/2024-group-09-cdsp/data_processing/final_data/Regionss-medium.csv'
 df_region = pd.read_csv(file_path_region, encoding='latin1')
 
 # Read the data from the CSV file for sustainable development goals
-file_path_sdg = 'SDG-medium.csv'
+file_path_sdg = 'C:/Users/Administrator/OneDrive/Desktop/2024-group-09-cdsp/data_processing/final_data/SDG-medium.csv'
 df_sdg = pd.read_csv(file_path_sdg)
 
 # Streamlit app
@@ -102,7 +102,6 @@ def main():
                     st.write(f"Predicted Mortality Rate for {selected_country} in {selected_year_country}: {mortality_prediction_country}")
             except ValueError:
                 st.warning("Please enter a valid year.")
-
     elif selected_data_option == 'By Region':
         # User input for region and year
         selected_region = st.selectbox("Select Region", df_region['Region.Name'].unique())
@@ -146,3 +145,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
