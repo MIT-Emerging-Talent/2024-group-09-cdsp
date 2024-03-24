@@ -30,19 +30,19 @@ def make_predictions(model, years):
     return model.predict([[year] for year in years])
 
 # Load data and train model for world child mortality rate
-file_path_world = './data_processing/final_data/world-medium.csv'
+file_path_world = './main/data_processing/final_data/world-medium.csv'
 df_world, lr_model_world, mse_world, r2_world = load_data_and_train_model(file_path_world)
 
 # Read the data from the CSV file for countries
-file_path_country = './data_processing/final_data/country-medium.csv'
+file_path_country = './main/data_processing/final_data/country-medium.csv'
 df_country = pd.read_csv(file_path_country, encoding='latin1')
 
 # Read the data from the CSV file for regions
-file_path_region = file_path_region = './data_processing/final_data/Regionss-medium.csv'
+file_path_region = file_path_region = './main/data_processing/final_data/Regionss-medium.csv'
 df_region = pd.read_csv(file_path_region, encoding='latin1')
 
 # Read the data from the CSV file for sustainable development goals
-file_path_sdg = './data_processing/final_data/SDG-medium.csv'
+file_path_sdg = './main/data_processing/final_data/SDG-medium.csv'
 df_sdg = pd.read_csv(file_path_sdg)
 
 # Streamlit app
